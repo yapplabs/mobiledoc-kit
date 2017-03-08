@@ -1,4 +1,5 @@
 export default {
-  isBrowser: (typeof window !== undefined),
-  isNode: (typeof window === 'undefined' && typeof process !== 'undefined')
+  hasDOM() {
+    return typeof document !== 'undefined';
+  }
 };

@@ -548,23 +548,15 @@ class Editor {
 
       switch (format) {
         case 'html':
-          let html;
-          if (Environment.isBrowser) {
+          let result;
+          if (Environment.hasDOM()) {
             rendered = new DOMRenderer(rendererOptions).render(mobiledoc);
-            html = `<div>${serializeHTML(rendered.result)}</div>`;
-          } else if (Environment.isNode) {
-            // TODO: need dependency on SimpleDOM
-            let renderer = new DOMRenderer({
-              dom: new SimpleDOM.Document()
-            });
-            let rendered = renderer.render(mobiledoc);
-            let serializer = new SimpleDOM.HTMLSerializer([]);
-            html = serializer.serializeChildren(rendered.result);
+            result = `<div>${serializeHTML(rendered.result)}</div>`;
           } else {
-            assert(`Unknown runtime environment.`);
+            // Fallback to text serialization
+            result = this.serializePost(post, 'text', options);
           }
-
-          return html;
+          return result;
         case 'text':
           rendered = new TextRenderer(rendererOptions).render(mobiledoc);
           return rendered.result;
