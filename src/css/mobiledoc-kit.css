@@ -3,7 +3,6 @@
  */
 
 .__mobiledoc-editor {
-  font-family: 'Lora', Georgia, serif;
   margin: 1em 0;
   color: #454545;
   font-size: 1.2em;
@@ -31,17 +30,6 @@
 .__mobiledoc-editor a {
   color: #0b8bff;
   white-space: nowrap;
-}
-
-.__mobiledoc-editor h1,
-.__mobiledoc-editor h2,
-.__mobiledoc-editor h3,
-.__mobiledoc-editor h4,
-.__mobiledoc-editor h5,
-.__mobiledoc-editor h6 {
-  font-family: 'Merriweather Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 800;
-  letter-spacing: -0.02em;
 }
 
 .__mobiledoc-editor blockquote {
@@ -84,7 +72,6 @@
 }
 
 .__mobiledoc-tooltip {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.7em;
   white-space: nowrap;
   position: absolute;
