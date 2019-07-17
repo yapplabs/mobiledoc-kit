@@ -49,7 +49,7 @@ const MarkupSection = class MarkupSection extends Markerable {
 
   splitAtMarker(marker, offset=0) {
     let [beforeSection, afterSection] = [
-      this.builder.createMarkupSection(this.tagName, []),
+      this.builder.createMarkupSection(this.tagName, [], false, this.attributes),
       this.builder.createMarkupSection()
     ];
 
